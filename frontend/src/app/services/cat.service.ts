@@ -9,9 +9,14 @@ import { Observable } from 'rxjs'
 export class CatService {
   private allCatUrl = 'http://localhost:3000/api/cats/v0/cat/readall';
   private DeleteCatUrl = 'http://localhost:3000/api/cats/v0/cat/delete';
+  private createCatUrl = 'http://localhost:3000/api/cats/v0/cat/create';
 
   header = new HttpHeaders().set("Content-type", "application/json");
   constructor(private http: HttpClient) { }
+
+  createCat(cat: Cat): Observable<any>{
+    return this.http.post(this.createCatUrl, cat, {headers: this.header})
+  }
 
   public readAllCat(): Observable<any>{
 

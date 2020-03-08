@@ -15,6 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialDesignModule } from './material-design/material-design.module';
 import { CatListComponent } from './cat-list/cat-list.component';
+import { CreateCatComponent } from './create-cat/create-cat.component';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { CatListComponent } from './cat-list/cat-list.component';
     AboutComponent,
     HomeComponent,
     NotFoundComponent,
-    CatListComponent
+    CatListComponent,
+    CreateCatComponent,
   ],
   imports: [
     BrowserModule,
