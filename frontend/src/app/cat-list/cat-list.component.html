@@ -1,0 +1,28 @@
+<div *ngIf="CatsList">
+  <table class="centered striped highlight">
+  <thead>
+
+      <tr>
+          <th data-field="name">Name</th>
+          <th data-field="age">Age</th>
+          <th data-field="breed">Breed</th>
+
+      </tr>
+
+  </thead>
+
+  <tbody>
+      <tr *ngFor="let cat of CatsList;">
+          <td class="striped" >{{cat.name}}</td>
+          <td>{{cat.age}}</td>
+          <td>{{cat.breed}}</td>
+          <td>
+              <button class="btn">Update</button>
+              <button class="btn" (click)="deleteCat(cat._id)"> Delete</button>
+          </td>
+      </tr>
+  </tbody>
+  </table>
+</div>
+
+

@@ -14,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialDesignModule } from './material-design/material-design.module';
+import { CatListComponent } from './cat-list/cat-list.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { MaterialDesignModule } from './material-design/material-design.module';
     FooterComponent,
     AboutComponent,
     HomeComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    CatListComponent
   ],
   imports: [
     BrowserModule,
