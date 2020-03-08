@@ -17,12 +17,17 @@
           <td>{{cat.age}}</td>
           <td>{{cat.breed}}</td>
           <td>
-              <button class="btn">Update</button>
-              <button class="btn" (click)="deleteCat(cat._id)"> Delete</button>
+            <button class="btn" (click)="setSelectedCat(cat)">Update</button>
+            <button class="btn" (click)="deleteCat(cat._id)"> Delete</button>
           </td>
       </tr>
   </tbody>
   </table>
+</div>
+
+
+<div *ngIf="selectedCat">
+  <app-cat-update [cat]="selectedCat"></app-cat-update>
 </div>
 
 

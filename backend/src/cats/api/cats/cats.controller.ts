@@ -1,6 +1,6 @@
 import { Controller, Get, Body, Post, Delete, Param } from '@nestjs/common';
 import { CatsService } from 'src/cats/services/cats/cats.service';
-
+import { CreateCatDto } from 'src/cats/interfaces/create-cat-dto';
 
 @Controller('api/cats/v0')
 export class CatsController {
@@ -15,6 +15,12 @@ export class CatsController {
     readAll(){
         return this.catsService.findAll();
     }
+
+    @Post('cat/update/:id')
+    updateCat(@Param('id') id: string, @Body()catDetails: CreateCatDto) {
+        return this.catsService.updateById(id, catDetails);
+    }
+    
     @Delete('cat/delete/:id')
     deleteCat(@Param('id') id: string){
         console.log('Borrar a '+ id);

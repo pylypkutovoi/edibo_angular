@@ -10,6 +10,7 @@ export class CatService {
   private allCatUrl = 'http://localhost:3000/api/cats/v0/cat/readall';
   private DeleteCatUrl = 'http://localhost:3000/api/cats/v0/cat/delete';
   private createCatUrl = 'http://localhost:3000/api/cats/v0/cat/create';
+  private updateCatUrl = 'http://localhost:3000/api/cats/v0/cat/update';
 
   header = new HttpHeaders().set("Content-type", "application/json");
   constructor(private http: HttpClient) { }
@@ -21,6 +22,10 @@ export class CatService {
   public readAllCat(): Observable<any>{
 
     return this.http.get(this.allCatUrl, {headers: this.header});
+  }
+
+  public updateCat(catDetails: Cat ){
+    return this.http.post(`${this.updateCatUrl}/${catDetails._id}`, catDetails, { headers: this.header });
   }
 
   public deleteCat(id){

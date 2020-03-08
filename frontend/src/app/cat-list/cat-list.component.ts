@@ -9,6 +9,8 @@ import * as _ from 'lodash';
   styleUrls: ['./cat-list.component.scss']
 })
 export class CatListComponent implements OnInit {
+
+  selectedCat: Cat;
   CatsList: Cat[];
 
   constructor( private catService: CatService ) { }
@@ -24,6 +26,11 @@ export class CatListComponent implements OnInit {
       return r;
     })
   }
+
+  setSelectedCat(cat: Cat){
+    this.selectedCat = cat;
+  }
+
   ngOnInit(): void {
     this.getAllCats();
   }

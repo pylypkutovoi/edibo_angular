@@ -1,0 +1,18 @@
+<form [formGroup]="catForm" (ngSubmit)="onSubmit(catForm.value)">
+  <div>
+      <label for="name"> Name: </label>
+      <input id="name" type="text" formControlName="name">
+  </div>
+
+  <div>
+      <label for="age">Age: </label>
+      <input id="age" type="text" formControlName="age">
+  </div>
+
+  <div>
+      <label for="breed">Breed: </label>
+      <input id="breed" type="text" formControlName="breed">
+  </div>
+
+  <button class="btn" type="submit" >Update</button>
+</form>
